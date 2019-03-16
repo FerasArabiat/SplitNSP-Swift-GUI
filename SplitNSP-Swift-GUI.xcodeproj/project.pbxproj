@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41EACD89D3B9696DC3423502 /* Pods_SplitNSP_Swift_GUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015A70ACD0BFB8F60C97845E /* Pods_SplitNSP_Swift_GUI.framework */; };
+		5E2838939EB78F828F0C6A09 /* Pods_SplitNSP_Swift_GUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA95B8EAAE1B1FC1C704E31 /* Pods_SplitNSP_Swift_GUIUITests.framework */; };
+		DB19501F1A45DC7678AF2FAF /* Pods_SplitNSP_Swift_GUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED33A979F709A155D92591A7 /* Pods_SplitNSP_Swift_GUITests.framework */; };
+		E03A9AE4223D64FB00B0DAE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A9AE3223D64FB00B0DAE8 /* AppDelegate.swift */; };
+		E03A9AE6223D64FB00B0DAE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A9AE5223D64FB00B0DAE8 /* ViewController.swift */; };
+		E03A9AE8223D64FC00B0DAE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03A9AE7223D64FC00B0DAE8 /* Assets.xcassets */; };
+		E03A9AEB223D64FC00B0DAE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03A9AE9223D64FC00B0DAE8 /* Main.storyboard */; };
+		E03A9AF7223D64FC00B0DAE8 /* SplitNSP_Swift_GUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A9AF6223D64FC00B0DAE8 /* SplitNSP_Swift_GUITests.swift */; };
+		E03A9B02223D64FD00B0DAE8 /* SplitNSP_Swift_GUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A9B01223D64FD00B0DAE8 /* SplitNSP_Swift_GUIUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E03A9AF3223D64FC00B0DAE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E03A9AD8223D64FB00B0DAE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E03A9ADF223D64FB00B0DAE8;
+			remoteInfo = "SplitNSP-Swift-GUI";
+		};
+		E03A9AFE223D64FC00B0DAE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E03A9AD8223D64FB00B0DAE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E03A9ADF223D64FB00B0DAE8;
+			remoteInfo = "SplitNSP-Swift-GUI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		015A70ACD0BFB8F60C97845E /* Pods_SplitNSP_Swift_GUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitNSP_Swift_GUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		115DBEDBD415E41AA8651AF6 /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUITests.release.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUITests/Pods-SplitNSP-Swift-GUITests.release.xcconfig"; sourceTree = "<group>"; };
+		150878330939D42C56053E3A /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUIUITests.release.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUIUITests/Pods-SplitNSP-Swift-GUIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2EE307518C53896536FEAC04 /* Pods-SplitNSP-Swift-GUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUI.release.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI.release.xcconfig"; sourceTree = "<group>"; };
+		42512113A1F933A84F5CD729 /* Pods-SplitNSP-Swift-GUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUITests.debug.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUITests/Pods-SplitNSP-Swift-GUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		852A4174A5455E1B7661CDCD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUIUITests/Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CA95B8EAAE1B1FC1C704E31 /* Pods_SplitNSP_Swift_GUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitNSP_Swift_GUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03A9AE0223D64FB00B0DAE8 /* SplitNSP-Swift-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SplitNSP-Swift-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03A9AE3223D64FB00B0DAE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E03A9AE5223D64FB00B0DAE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E03A9AE7223D64FC00B0DAE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E03A9AEA223D64FC00B0DAE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E03A9AEC223D64FC00B0DAE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E03A9AED223D64FC00B0DAE8 /* SplitNSP_Swift_GUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitNSP_Swift_GUI.entitlements; sourceTree = "<group>"; };
+		E03A9AF2223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SplitNSP-Swift-GUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03A9AF6223D64FC00B0DAE8 /* SplitNSP_Swift_GUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNSP_Swift_GUITests.swift; sourceTree = "<group>"; };
+		E03A9AF8223D64FC00B0DAE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E03A9AFD223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SplitNSP-Swift-GUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03A9B01223D64FD00B0DAE8 /* SplitNSP_Swift_GUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNSP_Swift_GUIUITests.swift; sourceTree = "<group>"; };
+		E03A9B03223D64FD00B0DAE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED33A979F709A155D92591A7 /* Pods_SplitNSP_Swift_GUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitNSP_Swift_GUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77413C8A6D9C0149F0BB50E /* Pods-SplitNSP-Swift-GUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUI.debug.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E03A9ADD223D64FB00B0DAE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41EACD89D3B9696DC3423502 /* Pods_SplitNSP_Swift_GUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03A9AEF223D64FC00B0DAE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB19501F1A45DC7678AF2FAF /* Pods_SplitNSP_Swift_GUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03A9AFA223D64FC00B0DAE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E2838939EB78F828F0C6A09 /* Pods_SplitNSP_Swift_GUIUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E2154A9586AD62E174DDBD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				015A70ACD0BFB8F60C97845E /* Pods_SplitNSP_Swift_GUI.framework */,
+				ED33A979F709A155D92591A7 /* Pods_SplitNSP_Swift_GUITests.framework */,
+				9CA95B8EAAE1B1FC1C704E31 /* Pods_SplitNSP_Swift_GUIUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7757C5D9DC6EE4B9E45DAF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F77413C8A6D9C0149F0BB50E /* Pods-SplitNSP-Swift-GUI.debug.xcconfig */,
+				2EE307518C53896536FEAC04 /* Pods-SplitNSP-Swift-GUI.release.xcconfig */,
+				42512113A1F933A84F5CD729 /* Pods-SplitNSP-Swift-GUITests.debug.xcconfig */,
+				115DBEDBD415E41AA8651AF6 /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */,
+				852A4174A5455E1B7661CDCD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */,
+				150878330939D42C56053E3A /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E03A9AD7223D64FB00B0DAE8 = {
+			isa = PBXGroup;
+			children = (
+				E03A9AE2223D64FB00B0DAE8 /* SplitNSP-Swift-GUI */,
+				E03A9AF5223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests */,
+				E03A9B00223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests */,
+				E03A9AE1223D64FB00B0DAE8 /* Products */,
+				A7757C5D9DC6EE4B9E45DAF0 /* Pods */,
+				6E2154A9586AD62E174DDBD7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E03A9AE1223D64FB00B0DAE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E03A9AE0223D64FB00B0DAE8 /* SplitNSP-Swift-GUI.app */,
+				E03A9AF2223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests.xctest */,
+				E03A9AFD223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E03A9AE2223D64FB00B0DAE8 /* SplitNSP-Swift-GUI */ = {
+			isa = PBXGroup;
+			children = (
+				E03A9AE3223D64FB00B0DAE8 /* AppDelegate.swift */,
+				E03A9AE5223D64FB00B0DAE8 /* ViewController.swift */,
+				E03A9AE7223D64FC00B0DAE8 /* Assets.xcassets */,
+				E03A9AE9223D64FC00B0DAE8 /* Main.storyboard */,
+				E03A9AEC223D64FC00B0DAE8 /* Info.plist */,
+				E03A9AED223D64FC00B0DAE8 /* SplitNSP_Swift_GUI.entitlements */,
+			);
+			path = "SplitNSP-Swift-GUI";
+			sourceTree = "<group>";
+		};
+		E03A9AF5223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E03A9AF6223D64FC00B0DAE8 /* SplitNSP_Swift_GUITests.swift */,
+				E03A9AF8223D64FC00B0DAE8 /* Info.plist */,
+			);
+			path = "SplitNSP-Swift-GUITests";
+			sourceTree = "<group>";
+		};
+		E03A9B00223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E03A9B01223D64FD00B0DAE8 /* SplitNSP_Swift_GUIUITests.swift */,
+				E03A9B03223D64FD00B0DAE8 /* Info.plist */,
+			);
+			path = "SplitNSP-Swift-GUIUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E03A9ADF223D64FB00B0DAE8 /* SplitNSP-Swift-GUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E03A9B06223D64FD00B0DAE8 /* Build configuration list for PBXNativeTarget "SplitNSP-Swift-GUI" */;
+			buildPhases = (
+				0F2129A1342BB5B2B5FF252E /* [CP] Check Pods Manifest.lock */,
+				E03A9ADC223D64FB00B0DAE8 /* Sources */,
+				E03A9ADD223D64FB00B0DAE8 /* Frameworks */,
+				E03A9ADE223D64FB00B0DAE8 /* Resources */,
+				7B77D4B9810306559D359B2D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SplitNSP-Swift-GUI";
+			productName = "SplitNSP-Swift-GUI";
+			productReference = E03A9AE0223D64FB00B0DAE8 /* SplitNSP-Swift-GUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E03A9AF1223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E03A9B09223D64FD00B0DAE8 /* Build configuration list for PBXNativeTarget "SplitNSP-Swift-GUITests" */;
+			buildPhases = (
+				02F2771CA00F30B599E6D50B /* [CP] Check Pods Manifest.lock */,
+				E03A9AEE223D64FC00B0DAE8 /* Sources */,
+				E03A9AEF223D64FC00B0DAE8 /* Frameworks */,
+				E03A9AF0223D64FC00B0DAE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E03A9AF4223D64FC00B0DAE8 /* PBXTargetDependency */,
+			);
+			name = "SplitNSP-Swift-GUITests";
+			productName = "SplitNSP-Swift-GUITests";
+			productReference = E03A9AF2223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E03A9AFC223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E03A9B0C223D64FD00B0DAE8 /* Build configuration list for PBXNativeTarget "SplitNSP-Swift-GUIUITests" */;
+			buildPhases = (
+				C999FBEDE1A477C9CE8883F6 /* [CP] Check Pods Manifest.lock */,
+				E03A9AF9223D64FC00B0DAE8 /* Sources */,
+				E03A9AFA223D64FC00B0DAE8 /* Frameworks */,
+				E03A9AFB223D64FC00B0DAE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E03A9AFF223D64FC00B0DAE8 /* PBXTargetDependency */,
+			);
+			name = "SplitNSP-Swift-GUIUITests";
+			productName = "SplitNSP-Swift-GUIUITests";
+			productReference = E03A9AFD223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E03A9AD8223D64FB00B0DAE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Feras Arabiat";
+				TargetAttributes = {
+					E03A9ADF223D64FB00B0DAE8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E03A9AF1223D64FC00B0DAE8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E03A9ADF223D64FB00B0DAE8;
+					};
+					E03A9AFC223D64FC00B0DAE8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E03A9ADF223D64FB00B0DAE8;
+					};
+				};
+			};
+			buildConfigurationList = E03A9ADB223D64FB00B0DAE8 /* Build configuration list for PBXProject "SplitNSP-Swift-GUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E03A9AD7223D64FB00B0DAE8;
+			productRefGroup = E03A9AE1223D64FB00B0DAE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E03A9ADF223D64FB00B0DAE8 /* SplitNSP-Swift-GUI */,
+				E03A9AF1223D64FC00B0DAE8 /* SplitNSP-Swift-GUITests */,
+				E03A9AFC223D64FC00B0DAE8 /* SplitNSP-Swift-GUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E03A9ADE223D64FB00B0DAE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E03A9AE8223D64FC00B0DAE8 /* Assets.xcassets in Resources */,
+				E03A9AEB223D64FC00B0DAE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03A9AF0223D64FC00B0DAE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03A9AFB223D64FC00B0DAE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02F2771CA00F30B599E6D50B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SplitNSP-Swift-GUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F2129A1342BB5B2B5FF252E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SplitNSP-Swift-GUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B77D4B9810306559D359B2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADragDropView/ADragDropView.framework",
+				"${BUILT_PRODUCTS_DIR}/CircularProgressMac/CircularProgressMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADragDropView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircularProgressMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C999FBEDE1A477C9CE8883F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SplitNSP-Swift-GUIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E03A9ADC223D64FB00B0DAE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E03A9AE6223D64FB00B0DAE8 /* ViewController.swift in Sources */,
+				E03A9AE4223D64FB00B0DAE8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03A9AEE223D64FC00B0DAE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E03A9AF7223D64FC00B0DAE8 /* SplitNSP_Swift_GUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03A9AF9223D64FC00B0DAE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E03A9B02223D64FD00B0DAE8 /* SplitNSP_Swift_GUIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E03A9AF4223D64FC00B0DAE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E03A9ADF223D64FB00B0DAE8 /* SplitNSP-Swift-GUI */;
+			targetProxy = E03A9AF3223D64FC00B0DAE8 /* PBXContainerItemProxy */;
+		};
+		E03A9AFF223D64FC00B0DAE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E03A9ADF223D64FB00B0DAE8 /* SplitNSP-Swift-GUI */;
+			targetProxy = E03A9AFE223D64FC00B0DAE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E03A9AE9223D64FC00B0DAE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E03A9AEA223D64FC00B0DAE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E03A9B04223D64FD00B0DAE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E03A9B05223D64FD00B0DAE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E03A9B07223D64FD00B0DAE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F77413C8A6D9C0149F0BB50E /* Pods-SplitNSP-Swift-GUI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7LF5KFP3A;
+				INFOPLIST_FILE = "SplitNSP-Swift-GUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		E03A9B08223D64FD00B0DAE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EE307518C53896536FEAC04 /* Pods-SplitNSP-Swift-GUI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7LF5KFP3A;
+				INFOPLIST_FILE = "SplitNSP-Swift-GUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		E03A9B0A223D64FD00B0DAE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42512113A1F933A84F5CD729 /* Pods-SplitNSP-Swift-GUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7LF5KFP3A;
+				INFOPLIST_FILE = "SplitNSP-Swift-GUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitNSP-Swift-GUI.app/Contents/MacOS/SplitNSP-Swift-GUI";
+			};
+			name = Debug;
+		};
+		E03A9B0B223D64FD00B0DAE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 115DBEDBD415E41AA8651AF6 /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7LF5KFP3A;
+				INFOPLIST_FILE = "SplitNSP-Swift-GUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitNSP-Swift-GUI.app/Contents/MacOS/SplitNSP-Swift-GUI";
+			};
+			name = Release;
+		};
+		E03A9B0D223D64FD00B0DAE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 852A4174A5455E1B7661CDCD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7LF5KFP3A;
+				INFOPLIST_FILE = "SplitNSP-Swift-GUIUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "SplitNSP-Swift-GUI";
+			};
+			name = Debug;
+		};
+		E03A9B0E223D64FD00B0DAE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 150878330939D42C56053E3A /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7LF5KFP3A;
+				INFOPLIST_FILE = "SplitNSP-Swift-GUIUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "SplitNSP-Swift-GUI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E03A9ADB223D64FB00B0DAE8 /* Build configuration list for PBXProject "SplitNSP-Swift-GUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E03A9B04223D64FD00B0DAE8 /* Debug */,
+				E03A9B05223D64FD00B0DAE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E03A9B06223D64FD00B0DAE8 /* Build configuration list for PBXNativeTarget "SplitNSP-Swift-GUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E03A9B07223D64FD00B0DAE8 /* Debug */,
+				E03A9B08223D64FD00B0DAE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E03A9B09223D64FD00B0DAE8 /* Build configuration list for PBXNativeTarget "SplitNSP-Swift-GUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E03A9B0A223D64FD00B0DAE8 /* Debug */,
+				E03A9B0B223D64FD00B0DAE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E03A9B0C223D64FD00B0DAE8 /* Build configuration list for PBXNativeTarget "SplitNSP-Swift-GUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E03A9B0D223D64FD00B0DAE8 /* Debug */,
+				E03A9B0E223D64FD00B0DAE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E03A9AD8223D64FB00B0DAE8 /* Project object */;
+}
