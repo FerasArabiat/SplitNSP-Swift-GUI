@@ -751,7 +751,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Iz-6e-VbM"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" alignment="left" title="Drag and Drop NSP File" id="tbu-qB-HDx">
+                                <textFieldCell key="cell" lineBreakMode="truncatingHead" alignment="left" title="Drag and Drop NSP File" id="tbu-qB-HDx">
                                     <font key="font" metaFont="system" size="22"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
