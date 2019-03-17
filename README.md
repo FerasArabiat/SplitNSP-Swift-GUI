@@ -4,6 +4,8 @@ Split Nintendo Switch NSP to FAT32 friendly sizes.
 
 This is a Swift based Mac GUI app re-implementation of @AnalogMan151 work here: https://github.com/AnalogMan151/splitNSP
 
+![SplitNSP GUI Demo](/Images/SplitNSP-Animation.gif)
+
 # Setup
 1. Clone
 2. From command line `pod install`
