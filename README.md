@@ -8,9 +8,8 @@ This is a Swift based Mac GUI app re-implementation of @AnalogMan151 work here: 
 
 ---
 # Install latest version
-
-To installed a pre-compiled version of the app 
-1. Download the Latest releases of the app in the releases section: https://github.com/FerasArabiat/SplitNSP-Swift-GUI/releases
+To install a pre-compiled version of the app 
+1. Download the Latest releases of the app from the releases section: https://github.com/FerasArabiat/SplitNSP-Swift-GUI/releases
 2. Download the `SplitNSP-Swift-GUI.vX.Y.zip` file
 3. Extract the zip file
 4. Drag the app into your application folder and run it
