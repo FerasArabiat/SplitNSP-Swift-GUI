@@ -37,12 +37,18 @@
 
 /* Begin PBXFileReference section */
 		015A70ACD0BFB8F60C97845E /* Pods_SplitNSP_Swift_GUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitNSP_Swift_GUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B12042A4866E1DBA75CD0BD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitNSP-Swift-GUIUITests/Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		115DBEDBD415E41AA8651AF6 /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUITests.release.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUITests/Pods-SplitNSP-Swift-GUITests.release.xcconfig"; sourceTree = "<group>"; };
+		11DF5EEEC34A51CCEC27FBA2 /* Pods-SplitNSP-Swift-GUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI.release.xcconfig"; sourceTree = "<group>"; };
 		150878330939D42C56053E3A /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUIUITests.release.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUIUITests/Pods-SplitNSP-Swift-GUIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2EE307518C53896536FEAC04 /* Pods-SplitNSP-Swift-GUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUI.release.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI.release.xcconfig"; sourceTree = "<group>"; };
 		42512113A1F933A84F5CD729 /* Pods-SplitNSP-Swift-GUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUITests.debug.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUITests/Pods-SplitNSP-Swift-GUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		432F2842BEE762CCDF928C03 /* Pods-SplitNSP-Swift-GUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI.debug.xcconfig"; sourceTree = "<group>"; };
+		4F45FA7551FAE57B757CD719 /* Pods-SplitNSP-Swift-GUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitNSP-Swift-GUITests/Pods-SplitNSP-Swift-GUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5231FA1A7738B374C5918856 /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUIUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitNSP-Swift-GUIUITests/Pods-SplitNSP-Swift-GUIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		852A4174A5455E1B7661CDCD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-SplitNSP-Swift-GUIUITests/Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA95B8EAAE1B1FC1C704E31 /* Pods_SplitNSP_Swift_GUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitNSP_Swift_GUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF93125834937E8B274FC33F /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitNSP-Swift-GUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitNSP-Swift-GUITests/Pods-SplitNSP-Swift-GUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E03A9AE0223D64FB00B0DAE8 /* SplitNSP-Swift-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SplitNSP-Swift-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03A9AE3223D64FB00B0DAE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E03A9AE5223D64FB00B0DAE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +113,12 @@
 				115DBEDBD415E41AA8651AF6 /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */,
 				852A4174A5455E1B7661CDCD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */,
 				150878330939D42C56053E3A /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */,
+				432F2842BEE762CCDF928C03 /* Pods-SplitNSP-Swift-GUI.debug.xcconfig */,
+				11DF5EEEC34A51CCEC27FBA2 /* Pods-SplitNSP-Swift-GUI.release.xcconfig */,
+				4F45FA7551FAE57B757CD719 /* Pods-SplitNSP-Swift-GUITests.debug.xcconfig */,
+				CF93125834937E8B274FC33F /* Pods-SplitNSP-Swift-GUITests.release.xcconfig */,
+				0B12042A4866E1DBA75CD0BD /* Pods-SplitNSP-Swift-GUIUITests.debug.xcconfig */,
+				5231FA1A7738B374C5918856 /* Pods-SplitNSP-Swift-GUIUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -299,15 +311,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SplitNSP-Swift-GUITests-checkManifestLockResult.txt",
 			);
@@ -321,15 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SplitNSP-Swift-GUI-checkManifestLockResult.txt",
 			);
@@ -343,16 +347,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SplitNSP-Swift-GUI/Pods-SplitNSP-Swift-GUI-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ADragDropView/ADragDropView.framework",
 				"${BUILT_PRODUCTS_DIR}/CircularProgressMac/CircularProgressMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADragDropView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircularProgressMac.framework",
@@ -367,15 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SplitNSP-Swift-GUIUITests-checkManifestLockResult.txt",
 			);
@@ -490,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -545,7 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -567,6 +563,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -586,6 +583,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timsa7.SplitNSP-Swift-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
