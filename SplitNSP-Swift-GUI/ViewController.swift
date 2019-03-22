@@ -183,11 +183,10 @@ class ViewController: NSViewController, ADragDropViewDelegate {
                                 
                                 while partSize < remainingSize {
                                     autoreleasepool {
-                                        
-                                        inputStream.read(buffer, maxLength: chunkSize)
-                                        outStream.write(buffer, maxLength: chunkSize)
-                                        partSize += chunkSize
-                                        totalCompleted += chunkSize
+                                        let readLength = inputStream.read(buffer, maxLength: chunkSize)
+                                        outStream.write(buffer, maxLength: readLength)
+                                        partSize += readLength
+                                        totalCompleted += readLength
                                         
                                         partProgressValue.completedUnitCount = Int64(partSize)
                                         nspProgressValue.completedUnitCount = Int64(totalCompleted)
