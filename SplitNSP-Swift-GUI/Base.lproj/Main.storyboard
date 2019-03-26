@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -710,14 +711,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SplitNSP_Swift_GUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="451"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="thV-WR-ohR" customClass="ADragDropView" customModule="ADragDropView">
-                                <rect key="frame" x="20" y="66" width="760" height="314"/>
+                                <rect key="frame" x="20" y="106" width="760" height="325"/>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="kWD-Cm-76R" customClass="CircularProgress" customModule="CircularProgressMac">
-                                <rect key="frame" x="50" y="60" width="320" height="320"/>
+                                <rect key="frame" x="50" y="111" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="4wK-0S-Ak6"/>
                                     <constraint firstAttribute="width" secondItem="kWD-Cm-76R" secondAttribute="height" multiplier="1:1" id="bv4-F3-bjm"/>
@@ -725,7 +726,7 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="KoG-g9-l2W" customClass="CircularProgress" customModule="CircularProgressMac">
-                                <rect key="frame" x="430" y="60" width="320" height="320"/>
+                                <rect key="frame" x="430" y="111" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="BCv-k7-o5x"/>
                                     <constraint firstAttribute="width" secondItem="KoG-g9-l2W" secondAttribute="height" multiplier="1:1" id="Em2-BX-wWf"/>
@@ -733,46 +734,62 @@
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="phc-5c-Shw">
-                                <rect key="frame" x="630" y="20" width="150" height="38"/>
+                                <rect key="frame" x="630" y="60" width="150" height="38"/>
+                                <string key="toolTip">Splits the NSP into a folder and keeps the original file untouched. Slower, requires more space (double the file size), but you have a copy of the source NSP incase something goes wrong.</string>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Cv4-NQ-Gty"/>
                                     <constraint firstAttribute="height" constant="38" id="loG-WZ-l5a"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Split NSP" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K7H-0L-60w">
+                                <buttonCell key="cell" type="square" title="Split a copy" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K7H-0L-60w">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="20"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="splitNSPButtonClicked:" target="XfG-lQ-9wD" id="Uv7-fw-C4M"/>
+                                    <action selector="splitACopyButtonClicked:" target="XfG-lQ-9wD" id="Uv7-fw-C4M"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Cph-bP-s2g">
-                                <rect key="frame" x="18" y="24" width="606" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5Iz-6e-VbM"/>
-                                </constraints>
-                                <textFieldCell key="cell" lineBreakMode="truncatingHead" alignment="left" title="Drag and Drop NSP File" id="tbu-qB-HDx">
-                                    <font key="font" metaFont="system" size="22"/>
+                                <rect key="frame" x="18" y="12" width="606" height="82"/>
+                                <textFieldCell key="cell" alignment="left" title="Drag and Drop NSP File" id="tbu-qB-HDx">
+                                    <font key="font" metaFont="system" size="18"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dyn-5L-elV">
+                                <rect key="frame" x="630" y="12" width="150" height="38"/>
+                                <string key="toolTip">Splits the NSP into a folder and removes the source NSP. Faster, requires less space (4 GB), but you lose the source NSP incase something goes wrong.</string>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="NXe-QK-cci"/>
+                                    <constraint firstAttribute="height" constant="38" id="U2W-fX-jkj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="v7A-7h-xAW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="wnt-qc-gBJ"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Split in place" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1hf-ny-dIa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="20"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="splitACopyButtonClicked:" target="XfG-lQ-9wD" id="0ki-wP-hiE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Cph-bP-s2g" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="1Z6-43-Lyh"/>
                             <constraint firstItem="thV-WR-ohR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="4aX-5U-Ecn"/>
                             <constraint firstAttribute="trailing" secondItem="phc-5c-Shw" secondAttribute="trailing" constant="20" symbolic="YES" id="4le-Ct-7WV"/>
+                            <constraint firstItem="Dyn-5L-elV" firstAttribute="top" secondItem="phc-5c-Shw" secondAttribute="bottom" constant="10" id="5aa-TA-E9n"/>
                             <constraint firstItem="kWD-Cm-76R" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="6iq-X8-ogN"/>
                             <constraint firstItem="phc-5c-Shw" firstAttribute="top" secondItem="thV-WR-ohR" secondAttribute="bottom" constant="8" symbolic="YES" id="8gz-9M-ynz"/>
                             <constraint firstItem="KoG-g9-l2W" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="9y1-92-JtC"/>
                             <constraint firstItem="kWD-Cm-76R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="AQs-Jm-QUr"/>
                             <constraint firstItem="thV-WR-ohR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="CLV-VF-36u"/>
+                            <constraint firstAttribute="trailing" secondItem="Dyn-5L-elV" secondAttribute="trailing" constant="20" id="HKC-3b-BIN"/>
                             <constraint firstItem="Cph-bP-s2g" firstAttribute="top" secondItem="thV-WR-ohR" secondAttribute="bottom" constant="12" id="K5Z-MQ-OCD"/>
-                            <constraint firstAttribute="bottom" secondItem="phc-5c-Shw" secondAttribute="bottom" constant="20" symbolic="YES" id="Nzc-3D-FpS"/>
                             <constraint firstItem="phc-5c-Shw" firstAttribute="leading" secondItem="Cph-bP-s2g" secondAttribute="trailing" constant="8" symbolic="YES" id="ZkG-5V-rzM"/>
                             <constraint firstAttribute="trailing" secondItem="thV-WR-ohR" secondAttribute="trailing" constant="20" symbolic="YES" id="fL9-AK-Ptq"/>
-                            <constraint firstItem="phc-5c-Shw" firstAttribute="leading" secondItem="Cph-bP-s2g" secondAttribute="trailing" constant="8" symbolic="YES" id="fkD-af-kXo"/>
-                            <constraint firstAttribute="bottom" secondItem="Cph-bP-s2g" secondAttribute="bottom" constant="24" id="y0Z-bl-427"/>
+                            <constraint firstAttribute="bottom" secondItem="Dyn-5L-elV" secondAttribute="bottom" constant="12" id="k1w-ni-DZd"/>
+                            <constraint firstAttribute="bottom" secondItem="Cph-bP-s2g" secondAttribute="bottom" constant="12" id="vVW-a6-4A5"/>
                             <constraint firstAttribute="trailing" secondItem="KoG-g9-l2W" secondAttribute="trailing" constant="50" id="zEi-ws-ylS"/>
                         </constraints>
                     </view>
@@ -780,13 +797,14 @@
                         <outlet property="dragDropView" destination="thV-WR-ohR" id="4de-8d-T4w"/>
                         <outlet property="nspProgress" destination="kWD-Cm-76R" id="sHy-LP-aab"/>
                         <outlet property="partProgress" destination="KoG-g9-l2W" id="LWZ-xQ-Boh"/>
-                        <outlet property="splitNSPButton" destination="phc-5c-Shw" id="9m7-rF-uEw"/>
+                        <outlet property="splitACopyButton" destination="phc-5c-Shw" id="9m7-rF-uEw"/>
+                        <outlet property="splitInPlaceButton" destination="Dyn-5L-elV" id="vME-qt-6gL"/>
                         <outlet property="statusLabel" destination="Cph-bP-s2g" id="ib9-pQ-EEK"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="978"/>
+            <point key="canvasLocation" x="208" y="1003.5"/>
         </scene>
     </scenes>
 </document>

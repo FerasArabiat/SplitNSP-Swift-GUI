@@ -19,7 +19,8 @@ class ViewController: NSViewController, ADragDropViewDelegate {
     var nspProgressValue = Progress(totalUnitCount: 1)
     
     @IBOutlet weak var statusLabel: NSTextField!
-    @IBOutlet weak var splitNSPButton: NSButton!
+    @IBOutlet weak var splitACopyButton: NSButton!
+    @IBOutlet weak var splitInPlaceButton: NSButton!
     @IBOutlet weak var dragDropView: ADragDropView!
     @IBOutlet weak var nspProgress: CircularProgress!
     @IBOutlet weak var partProgress: CircularProgress!
@@ -31,12 +32,13 @@ class ViewController: NSViewController, ADragDropViewDelegate {
         
         partProgress.progressInstance = partProgressValue
         nspProgress.progressInstance = nspProgressValue
-        splitNSPButton.isEnabled = false
+        splitACopyButton.isEnabled = false
+        splitInPlaceButton.isEnabled = false
         nspProgress.isHidden = true
         partProgress.isHidden = true
     }
 
-    @IBAction func splitNSPButtonClicked(_ sender: Any) {
+    @IBAction func splitACopyButtonClicked(_ sender: Any) {
         
         DispatchQueue.global(qos:.background).async {
             self.splitCopy(filePath:self.filePath)
@@ -44,20 +46,27 @@ class ViewController: NSViewController, ADragDropViewDelegate {
         dragDropView.isHidden = true
         nspProgress.isHidden = false
         partProgress.isHidden = false
-        splitNSPButton.isEnabled = false
+        splitACopyButton.isEnabled = false
+        splitInPlaceButton.isEnabled = false
+
     }
     
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+    @IBAction func splitInPlaceButtonClicked(_ sender: Any) {
+        
+        DispatchQueue.global(qos:.background).async {
+            self.inplaceSplit(filePath:self.filePath)
         }
+        dragDropView.isHidden = true
+        nspProgress.isHidden = false
+        partProgress.isHidden = false
+        splitACopyButton.isEnabled = false
     }
     
-    // when one file is dropped
     func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL URL: URL) {
         filePath = URL.path
         statusLabel.stringValue = filePath
-        splitNSPButton.isEnabled = true
+        splitACopyButton.isEnabled = true
+        splitInPlaceButton.isEnabled = true
         nspProgressValue.totalUnitCount = Int64(getFileSize(filePath: filePath))
         print(filePath)
     }
@@ -91,23 +100,57 @@ class ViewController: NSViewController, ADragDropViewDelegate {
         return freeSize.uint64Value
     }
     
-    func splitCopy(filePath:String) {
+    func createNSPFolder(filePath:String) -> String {
+        let indexEndOfText = filePath.index(filePath.endIndex, offsetBy: -4)
+        let dir = filePath[..<indexEndOfText] + "_split.nsp"
+        let dirString:String = String(dir)
+        
+        //remove folder if exists
+        do {
+            try FileManager.default.removeItem(atPath: dirString)
+        }
+        catch {
+            print(error)
+        }
+        
+        //create folder
+        do {
+            try FileManager.default.createDirectory(atPath: dirString, withIntermediateDirectories: true, attributes: nil)
+        }
+        catch {
+            DispatchQueue.main.async {
+                print(error)
+                self.statusLabel.stringValue = error.localizedDescription
+            }
+            
+            return ""
+        }
+        
+        return dirString
+    }
+    
+    
+    func moveInputFile(filePath:String, destinationFolder:String) -> (result:Bool, firstPartFilePath:String) {
+        let firstPartFilePath = destinationFolder + "/00"
+        
+        if (try? FileManager.default.moveItem(atPath: filePath, toPath: firstPartFilePath)) != nil {
+            return (true, firstPartFilePath)
+        } else {
+            print("Unable to move and rename NSP")
+            return (false, firstPartFilePath)
+        }
+    }
+    
+    func inplaceSplit(filePath:String) {
         let fileSize =  getFileSize(filePath: filePath)
         print(fileSize)
+        nspProgressValue.totalUnitCount -= Int64(splitSize)
         nspProgressValue.completedUnitCount = 0
         partProgressValue.completedUnitCount = 0
-
+        
+    
         if let info = deviceRemainingFreeSpaceInBytes() {
             print("free space: \(info)")
-            
-            if info < fileSize*2 {
-                DispatchQueue.main.async {
-                    print("Not enough free space to run. Will require twice the space as the NSP file")
-                    self.statusLabel.stringValue = "Not enough free space to run. Will require twice the space as the NSP file"
-                }
-                
-                return
-            }
             
             print("Calculating number of splits...\n")
             
@@ -120,28 +163,177 @@ class ViewController: NSViewController, ADragDropViewDelegate {
                 return
             }
             
-            print("Splitting NSP into \(splitNum) parts...\n")
-            
-            let indexEndOfText = filePath.index(filePath.endIndex, offsetBy: -4)
-            let dir = filePath[..<indexEndOfText] + "_split.nsp"
-            let dirString:String = String(dir)
-                        
-            //remove folder if exists
-            do {
-                try FileManager.default.removeItem(atPath: dirString)
-            }
-            catch {
-                print(error)
-            }
-            
-            //create folder
-            do {
-                try FileManager.default.createDirectory(atPath: dirString, withIntermediateDirectories: true, attributes: nil)
-            }
-            catch {
-                print(error)
+            if info < splitSize {
+                DispatchQueue.main.async {
+                    print("Not enough temporary space. Needs 4GiB of free space.")
+                    self.statusLabel.stringValue = "Not enough temporary space. Needs 4GiB of free space."
+                }
+                
                 return
             }
+            
+            let destinationFolder = createNSPFolder(filePath: filePath)
+            
+            
+            //Move input file to directory and rename it to first part
+            let firstPartFilePath = moveInputFile(filePath: filePath, destinationFolder: destinationFolder)
+            
+            // Calculate size of final part to copy first
+            let finalSplitOffset = (splitSize * UInt64(splitNum - 1))
+
+            var totalCompleted = 0
+            var completedSplits = 1 //starting with one as the initial file will be split 00
+            
+            //# Copy final part and trim from main file
+            if let file: FileHandle = FileHandle(forUpdatingAtPath: firstPartFilePath.firstPartFilePath)  {
+                
+                let finalSplitSize = file.seekToEndOfFile() - finalSplitOffset
+                var splitStartOffset = finalSplitOffset
+                partProgressValue.totalUnitCount = Int64(finalSplitSize)
+                file.seek(toFileOffset: splitStartOffset)
+                var fileName = String(format: "%02d", splitNum - completedSplits)
+                var currentSplitSize = finalSplitSize
+                if ( FileManager.default.createFile(atPath: "\(destinationFolder)/\(fileName)", contents: nil) ) {
+                    if let outFile: FileHandle = FileHandle(forWritingAtPath: "\(destinationFolder)/\(fileName)") {
+                        
+                        var partSize = 0
+                        while partSize < currentSplitSize {
+                            autoreleasepool {
+                                let databuffer = file.readData(ofLength: chunkSize)
+                                outFile.write(databuffer)
+                                
+                                partSize += databuffer.count
+                                totalCompleted += databuffer.count
+                                
+                                partProgressValue.completedUnitCount = Int64(partSize)
+                                nspProgressValue.completedUnitCount = Int64(totalCompleted)
+                            }
+                            
+                        }
+                        
+                        completedSplits += 1
+                        outFile.closeFile()
+                        
+                    } else {
+                        DispatchQueue.main.async {
+                            print("Output file open failed")
+                            self.statusLabel.stringValue = "Output file open failed"
+                        }
+                        file.closeFile()
+                        return
+                    }
+                }
+                else {
+                    
+                    DispatchQueue.main.async {
+                        print("could not create output file at path: \(destinationFolder)/\(fileName)")
+                        self.statusLabel.stringValue = "could not create output file at path: \(destinationFolder)/\(fileName)"
+                    }
+                    
+                    return
+                }
+               
+                
+                file.truncateFile(atOffset: splitStartOffset)
+                
+                while completedSplits < splitNum {
+                    splitStartOffset = file.seekToEndOfFile() - splitSize
+                    file.seek(toFileOffset: splitStartOffset)
+                    fileName = String(format: "%02d", splitNum - completedSplits)
+                    currentSplitSize = splitSize
+                    partProgressValue.completedUnitCount = 0
+                    partProgressValue.totalUnitCount = Int64(splitSize)
+
+                    if ( FileManager.default.createFile(atPath: "\(destinationFolder)/\(fileName)", contents: nil) ) {
+                        if let outFile: FileHandle = FileHandle(forWritingAtPath: "\(destinationFolder)/\(fileName)") {
+                            
+                            var partSize = 0
+                            while partSize < currentSplitSize {
+                                autoreleasepool {
+                                    let databuffer = file.readData(ofLength: chunkSize)
+                                    outFile.write(databuffer)
+                                    
+                                    partSize += databuffer.count
+                                    totalCompleted += databuffer.count
+                                    
+                                    partProgressValue.completedUnitCount = Int64(partSize)
+                                    nspProgressValue.completedUnitCount = Int64(totalCompleted)
+                                }
+                            }
+                            
+                            completedSplits += 1
+                            outFile.closeFile()
+                            
+                        } else {
+                            DispatchQueue.main.async {
+                                print("Output file open failed")
+                                self.statusLabel.stringValue = "Output file open failed"
+                            }
+                            file.closeFile()
+                            return
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            print("could not create output file at path: \(destinationFolder)/\(fileName)")
+                            self.statusLabel.stringValue = "could not create output file at path: \(destinationFolder)/\(fileName)"
+                        }
+                        return
+                    }
+                    
+                    file.truncateFile(atOffset: splitStartOffset)
+                }
+                
+                file.closeFile()
+                
+                DispatchQueue.main.async {
+                    print("NSP split completed!")
+                    self.statusLabel.stringValue = "NSP split completed!"
+                    self.nspProgress.isHidden = true
+                    self.partProgress.isHidden = true
+                    self.dragDropView.isHidden = false
+                    self.splitACopyButton.isEnabled = false
+                    self.splitInPlaceButton.isEnabled = false
+                    self.filePath = ""
+                }
+                
+            } else {
+                print("File open failed")
+            }
+        }
+    }
+    
+    func splitCopy(filePath:String) {
+        let fileSize =  getFileSize(filePath: filePath)
+        print(fileSize)
+        nspProgressValue.completedUnitCount = 0
+        partProgressValue.completedUnitCount = 0
+
+        if let info = deviceRemainingFreeSpaceInBytes() {
+            print("free space: \(info)")
+            
+            print("Calculating number of splits...\n")
+            
+            let splitNum:Int = Int(fileSize / splitSize) + 1
+            if splitNum == 1 {
+                DispatchQueue.main.async {
+                    print("This NSP is under 4GiB and does not need to be split.")
+                    self.statusLabel.stringValue = "This NSP is under 4GiB and does not need to be split."
+                }
+                return
+            }
+            
+            if info < fileSize*2 {
+                DispatchQueue.main.async {
+                    print("Not enough free space to run. Will require twice the space as the NSP file")
+                    self.statusLabel.stringValue = "Not enough free space to run. Will require twice the space as the NSP file"
+                }
+                
+                return
+            }
+            
+            print("Splitting NSP into \(splitNum) parts...\n")
+            
+            let dir = createNSPFolder(filePath: filePath)
             
             var remainingSize = fileSize
             var totalCompleted = 0
@@ -157,20 +349,20 @@ class ViewController: NSViewController, ADragDropViewDelegate {
                         
                         var partSize = 0
                         let fileName = String(format: "%02d", i - 1)
+
                         if let outStream = OutputStream(toFileAtPath: ("\(dir)/\(fileName)"), append: true) {
                             outStream.open()
                             
                             let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: chunkSize)
                             if remainingSize > splitSize {
                                 partProgressValue.totalUnitCount = Int64(splitSize)
-                                
                                 while partSize < splitSize {
                                     autoreleasepool {
                                         inputStream.read(buffer, maxLength: chunkSize)
                                         outStream.write(buffer, maxLength: chunkSize)
                                         partSize += chunkSize
                                         totalCompleted += chunkSize
-                                        
+
                                         partProgressValue.completedUnitCount = Int64(partSize)
                                         nspProgressValue.completedUnitCount = Int64(totalCompleted)
                                    }
@@ -205,10 +397,11 @@ class ViewController: NSViewController, ADragDropViewDelegate {
                 DispatchQueue.main.async {
                     print("NSP split completed!")
                     self.statusLabel.stringValue = "NSP split completed!"
-                    self.nspProgress.isHidden = false
-                    self.partProgress.isHidden = false
-                    self.dragDropView.isHidden = true
-                    self.splitNSPButton.isEnabled = false
+                    self.nspProgress.isHidden = true
+                    self.partProgress.isHidden = true
+                    self.dragDropView.isHidden = false
+                    self.splitACopyButton.isEnabled = false
+                    self.splitInPlaceButton.isEnabled = false
                     self.filePath = ""
                 }
                 
